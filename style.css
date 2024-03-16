@@ -8,6 +8,20 @@ body {
     font-family: Helvetica;
 }
 
-#search {
-    font-size:22px;
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+#albumtracklist {
+    color: #ffffff;
+    font-family: Helvetica;
+    font-size: 20px;
+    list-style-type:decimal;
+}
+
+#albumtrack {
+    background-color: #58bee0;
+    padding:10px;
+    margin:5px;
 }

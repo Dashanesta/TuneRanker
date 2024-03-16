@@ -16,9 +16,23 @@
     <body>
         <div class="container-fluid">
             <h1 id="title">Rank your favorite tunes!</h1>
-            <input type="text" id="MBIDInput" placeholder="Enter MBID: " oninput="load()">
+            <div class="row">
+                    <div class="input-group centered">
+                        <input type="text" id="MBIDInput" placeholder="Enter MBID: ">
+                        <button class="btn btn-outline-secondary" type="button" onclick="search()">Search</button>
+                    </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <ol id="albumtracklist"></ol>
+                </div>
+                <div class="col-2"></div>
+            </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="main.js"></script>
+        <script src="draggable.js"></script>
     </body>
 </html>
