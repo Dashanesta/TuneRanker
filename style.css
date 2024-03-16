@@ -26,6 +26,10 @@ body {
     margin:5px;
 }
 
+#albumresult {
+    width: 100%;
+}
+
 #inputselector {
     padding-top: 0.6%;
 }
