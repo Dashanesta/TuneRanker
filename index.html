@@ -18,14 +18,20 @@
             <h1 id="title">Rank your favorite tunes!</h1>
             <div class="row">
                     <div class="input-group centered">
-                        <input type="text" id="MBIDInput" placeholder="Enter MBID: ">
-                        <button class="btn btn-outline-secondary" type="button" onclick="search()">Search</button>
+                            <input type="text" id="SearchBox" placeholder="Enter Album:">
+                            <button class="btn btn-outline-light" type="button" onclick="Search()">Search</button>
+                    </div>
+                    <div id="inputselector" class="btn-group btn-group-sm centered" role="group" aria-label="Input Selector">
+                        <button id="MBIDSelector" class="btn btn-outline-primary" onclick="SearchMode('MBID')">MBID</button>
+                        <button id="AlbumSelector" class="btn btn-primary" onclick="SearchMode('Album')">Album</button>
+                        <button id="ArtistSelector" class="btn btn-outline-primary" onclick="SearchMode('Artist')">Artist</button>
                     </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
+                    <ul id="albumresults"></ul>
                     <ol id="albumtracklist"></ol>
                 </div>
                 <div class="col-2"></div>

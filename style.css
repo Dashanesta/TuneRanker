@@ -9,7 +9,7 @@ body {
 }
 
 .centered {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
@@ -20,8 +20,12 @@ body {
     list-style-type:decimal;
 }
 
-#albumtrack {
+#albumtrack, #albumresult {
     background-color: #58bee0;
     padding:10px;
     margin:5px;
+}
+
+#inputselector {
+    padding-top: 0.6%;
 }
