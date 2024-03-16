@@ -3,7 +3,6 @@ async function search() {
     var mbid = document.getElementById("MBIDInput").value;
     //var tracklist = getAlbum(mbid);
     var tracklist = await getAlbum(mbid);
-    console.log(tracklist);
     arrayToList(tracklist, "albumtracklist");
 }
 
