@@ -62,7 +62,7 @@ async function Search() {
 async function ShowAlbumSearchResults(array) {
     ClearAllLists();
     let list = document.getElementById("albumresults");
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         var button = document.createElement('button');
         var li = document.createElement('li');
         li.innerText = `${array[i].artist} - ${array[i].album}`;
@@ -72,7 +72,7 @@ async function ShowAlbumSearchResults(array) {
         list.appendChild(button);
         button.appendChild(li);
     }
-    for (i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         try {
             let img = await LoadAlbumCover(array[i].mbid, "small");
             let cover = document.createElement('img');
@@ -96,13 +96,12 @@ async function LoadAlbumCover(mbid, size) {
 function ShowArtistSearchResults(array) {
     ClearAllLists();
     let list = document.getElementById("artistresults");
-    for (i = 0; i < array.length; ++i) {
+    for (var i = 0; i < array.length; ++i) {
         let button = document.createElement('button');
         let li = document.createElement('li');
         let disambiguation = array[i].disambiguation ? `(${array[i].disambiguation})` : '';
         li.innerText = `${array[i].artistname} ${disambiguation}`;
         button.setAttribute("class", "artistresult");
-        //button.setAttribute("type", "button");
         button.setAttribute("onclick", `ShowDiscography(${array[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
@@ -123,7 +122,7 @@ async function ShowDiscography(mbid) {
     results.sort((a, b) => new Date(a.releasedate) - new Date(b.releasedate));
     ClearAllLists();
     let list = document.getElementById("discography");
-    for (i = 0; i < results.length; ++i) {
+    for (let i = 0; i < results.length; ++i) {
         let button = document.createElement('button');
         let li = document.createElement('li');
         li.innerText = `${results[i].album} (${results[i].releasedate.substring(0, 4)})`;
@@ -133,7 +132,7 @@ async function ShowDiscography(mbid) {
         list.appendChild(button);
         button.appendChild(li);
     }
-    for (i = 0; i < results.length; i++) {
+    for (let i = 0; i < results.length; i++) {
         try {
             let img = await LoadAlbumCover(results[i].mbid, "small");
             let cover = document.createElement('img');
@@ -169,7 +168,7 @@ async function LoadTracklist(mbid) {
         }
         ClearAllLists();
         let list = document.getElementById("albumtracklist");
-        for (i = 0; i < tracklist.length; ++i) {
+        for (let i = 0; i < tracklist.length; ++i) {
             let li = document.createElement('li');
             li.innerText = tracklist[i];
             li.setAttribute("draggable", "true");
