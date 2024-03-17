@@ -24,16 +24,12 @@ body {
     background-color: #58bee0;
     padding:10px;
     margin:2px;
-    cursor:pointer;
 }
 
-.artistresult {
+.artistresult, .albumresult {
     width: 100%;
 }
 
-.albumresult {
-    width: 100%;
-}
 #albumresults, #artistresults, #discography {
     list-style-type:none;
 }
