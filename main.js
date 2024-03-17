@@ -102,7 +102,7 @@ function ShowArtistSearchResults(array) {
         let disambiguation = array[i].disambiguation ? `(${array[i].disambiguation})` : '';
         li.innerText = `${array[i].artistname} ${disambiguation}`;
         button.setAttribute("class", "artistresult");
-        button.setAttribute("type", "button");
+        //button.setAttribute("type", "button");
         button.setAttribute("onclick", `ShowDiscography(${array[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
