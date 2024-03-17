@@ -20,13 +20,13 @@ body {
     list-style-type:decimal;
 }
 
-#albumtrack, #albumresult {
+#albumtrack, .albumresult, .artistresult {
     background-color: #58bee0;
     padding:10px;
     margin:5px;
 }
 
-#albumresult {
+.albumresult, .artistresult {
     width: 100%;
 }
 
