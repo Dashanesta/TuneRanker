@@ -59,18 +59,38 @@ async function Search() {
     }
 }
 
-function ShowAlbumSearchResults(array) {
+async function ShowAlbumSearchResults(array) {
     ClearAllLists();
     let list = document.getElementById("albumresults");
-    for (i = 0; i < array.length; ++i) {
-        let button = document.createElement('button');
-        let li = document.createElement('li');
+    for (var i = 0; i < array.length; i++) {
+        var button = document.createElement('button');
+        var li = document.createElement('li');
         li.innerText = `${array[i].artist} - ${array[i].album}`;
+        button.setAttribute("id", i);
         button.setAttribute("class", "albumresult");
         button.setAttribute("onclick", `LoadTracklist(${array[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
     }
+    for (i = 0; i < array.length; i++) {
+        try {
+            let img = await LoadAlbumCover(array[i].mbid, "small");
+            let cover = document.createElement('img');
+            cover.setAttribute("width", "250");
+            cover.setAttribute("height", "250");
+            cover.setAttribute("src", img);
+            document.getElementById(i).appendChild(cover);
+        } catch {
+            console.log(`${array[i].album} has no album cover available`);
+        }
+    }
+}
+
+async function LoadAlbumCover(mbid, size) {
+    clippedMBID = mbid.substring(1,mbid.length-1);
+    var x = await fetch(`https://coverartarchive.org/release-group/${clippedMBID}`);
+    var result = await x.json();
+    return result.images[0].thumbnails[size];
 }
 
 function ShowArtistSearchResults(array) {
@@ -106,10 +126,23 @@ async function ShowDiscography(mbid) {
         let button = document.createElement('button');
         let li = document.createElement('li');
         li.innerText = `${results[i].album} (${results[i].releasedate.substring(0, 4)})`;
+        button.setAttribute("id", i);
         button.setAttribute("class", "albumresult");
         button.setAttribute("onclick", `LoadTracklist(${results[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
+    }
+    for (i = 0; i < results.length; i++) {
+        try {
+            let img = await LoadAlbumCover(results[i].mbid, "small");
+            let cover = document.createElement('img');
+            cover.setAttribute("width", "250");
+            cover.setAttribute("height", "250");
+            cover.setAttribute("src", img);
+            document.getElementById(i).appendChild(cover);
+        } catch {
+            console.log(`${results[i].album} has no album cover available`);
+        }
     }
 }
 
