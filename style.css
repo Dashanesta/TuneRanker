@@ -22,8 +22,8 @@ body {
 
 #albumtrack, .albumresult, .artistresult {
     background-color: #58bee0;
-    /*padding:10px;
-    margin:2px;*/
+    padding:10px;
+    margin:2px;
 }
 
 .artistresult, .albumresult {
