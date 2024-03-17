@@ -9,29 +9,35 @@ body {
 }
 
 .centered {
-  display: block;
-  justify-content: center;
+    display: block;
+    justify-content: center;
 }
 
 #albumtracklist {
     color: #ffffff;
     font-family: Helvetica;
     font-size: 20px;
-    list-style-type:decimal;
+    list-style-type: decimal;
 }
 
-#albumtrack, .albumresult, .artistresult {
+#albumtrack,
+.albumresult,
+.artistresult {
     background-color: #58bee0;
-    padding:10px;
-    margin:2px;
+    padding: 10px;
+    margin: 2px;
+    appearance: none;
 }
 
-.artistresult, .albumresult {
+.artistresult,
+.albumresult {
     width: 100%;
 }
 
-#albumresults, #artistresults, #discography {
-    list-style-type:none;
+#albumresults,
+#artistresults,
+#discography {
+    list-style-type: none;
 }
 
 #inputselector {

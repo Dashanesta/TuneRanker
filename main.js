@@ -87,7 +87,7 @@ async function ShowAlbumSearchResults(array) {
 }
 
 async function LoadAlbumCover(mbid, size) {
-    clippedMBID = mbid.substring(1,mbid.length-1);
+    clippedMBID = mbid.substring(1, mbid.length - 1);
     var x = await fetch(`https://coverartarchive.org/release-group/${clippedMBID}`);
     var result = await x.json();
     return result.images[0].thumbnails[size];
@@ -151,7 +151,7 @@ async function LoadTracklist(mbid) {
         let x = await fetch(`https://musicbrainz.org/ws/2/release/?release-group=${mbid}&status=official&inc=recordings&fmt=json`);
         let result = await x.json();
         console.log(result);
-        
+
         for (let i = 0; i < result.releases.length; i++) {
             if (result.releases[i].media.length === 1) {
                 var album = result.releases[i];
