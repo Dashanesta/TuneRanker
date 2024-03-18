@@ -93,7 +93,7 @@ async function LoadAlbumCover(mbid, size) {
     return result.images[0].thumbnails[size];
 }
 
-function ShowArtistSearchResults(array) {
+async function ShowArtistSearchResults(array) {
     ClearAllLists();
     let list = document.getElementById("artistresults");
     for (var i = 0; i < array.length; ++i) {
