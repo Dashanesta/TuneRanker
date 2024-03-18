@@ -93,7 +93,7 @@ async function LoadAlbumCover(mbid, size) {
     return result.images[0].thumbnails[size];
 }
 
-async function ShowArtistSearchResults(array) {
+function ShowArtistSearchResults(array) {
     ClearAllLists();
     let list = document.getElementById("artistresults");
     for (var i = 0; i < array.length; ++i) {
@@ -108,8 +108,8 @@ async function ShowArtistSearchResults(array) {
     }
 }
 
-async function ShowDiscography(mbid) {
-    var x = await fetch(`https://musicbrainz.org/ws/2/release-group/?artist=${mbid}&type=album&release-group-status=website-default&fmt=json`);
+async function ShowDiscography(artistmbid) {
+    var x = await fetch(`https://musicbrainz.org/ws/2/release-group/?artist=${artistmbid}&type=album&release-group-status=website-default&fmt=json`);
     var result = await x.json();
     var releasegroups = result["release-groups"];
     var results = [];
