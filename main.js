@@ -67,7 +67,7 @@ async function ShowAlbumSearchResults(array) {
         var li = document.createElement('li');
         li.innerText = `${array[i].artist} - ${array[i].album}`;
         button.setAttribute("id", i);
-        button.setAttribute("class", "albumresult");
+        button.setAttribute("class", "albumresult btn btn-primary");
         button.setAttribute("onclick", `LoadTracklist(${array[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
@@ -101,7 +101,7 @@ function ShowArtistSearchResults(array) {
         let li = document.createElement('li');
         let disambiguation = array[i].disambiguation ? `(${array[i].disambiguation})` : '';
         li.innerText = `${array[i].artistname} ${disambiguation}`;
-        button.setAttribute("class", "artistresult");
+        button.setAttribute("class", "artistresult btn btn-primary");
         button.setAttribute("onclick", `ShowDiscography(${array[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
@@ -127,7 +127,7 @@ async function ShowDiscography(artistmbid) {
         let li = document.createElement('li');
         li.innerText = `${results[i].album} (${results[i].releasedate.substring(0, 4)})`;
         button.setAttribute("id", i);
-        button.setAttribute("class", "albumresult");
+        button.setAttribute("class", "albumresult btn btn-primary");
         button.setAttribute("onclick", `LoadTracklist(${results[i].mbid})`);
         list.appendChild(button);
         button.appendChild(li);
